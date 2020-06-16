@@ -9,5 +9,5 @@ server.use("/user", userRouter);
 server.use("/contact", contactRouter);
 
 server.listen(config.app.port, () => {
-	console.log(`Services are listening to ${config.app.port}`);
+	console.log(`Service is listening to ${config.app.port}`);
 });
