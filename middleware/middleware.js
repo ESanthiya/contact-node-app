@@ -16,7 +16,7 @@ server.use("/", (req, res, next) => {
 	// mongodb://user:password123@ds019856.mlab.com:19856/heroku_3xm0068v
 });
 
-server.use(['/contact'], async (req, res, next) => {
+/*server.use(['/contact'], async (req, res, next) => {
 	if(!req.headers.authorization){
 		return res.send({
 			status: 'error',
@@ -27,7 +27,7 @@ server.use(['/contact'], async (req, res, next) => {
 	await userController.validateToken(res, req.headers.authorization);
 
 	next();
-})
+})*/
 
 server.use(bodyParser.json());
 
