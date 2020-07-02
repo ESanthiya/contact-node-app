@@ -3,9 +3,9 @@
 		"port": 5000,
 		"db": {
 			"protocal": "mongodb://",
-			"host": "127.0.0.1",
-			"port": "27017",
-			"name": "contact-manager"
+			"host": "ds019856.mlab.com",
+			"port": "19856",
+			"name": "heroku_3xm0068v"
 		}
 	}
 }
