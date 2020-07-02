@@ -5,7 +5,9 @@
 			"protocal": "mongodb://",
 			"host": "ds019856.mlab.com",
 			"port": "19856",
-			"name": "heroku_3xm0068v"
+			"name": "heroku_3xm0068v",
+			"username": "user",
+			"password": "password123"
 		}
 	}
 }
