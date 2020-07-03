@@ -6,10 +6,10 @@ var db = process.env.MONGODB_URL ||'mongodb://user:password123@ds019856.mlab.com
 const config = require("./../config/config");
 const userController = require('./../controller/user');
 
-server.use(cors({
+/*server.use(cors({
 	origin: 'http://localhost',
 	// credentials: true
-}));
+}));*/
 
 server.use("/", (req, res, next) => {
 	try{
