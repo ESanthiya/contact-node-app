@@ -1,6 +1,6 @@
 {
 	"app": {
-		"port": 19856,
+		"port": 5000,
 		"db": {
 			"protocal": "mongodb://",
 			"host": "ds019856.mlab.com",
