@@ -11,10 +11,10 @@ const userRouter = require("./router/user");
 //    res.end('Hello World\n');
 // }).listen(process.env.PORT);
 
-server.get('/',(req, res)=>
-{
-res.send('initial load');
-})
+// server.get('/',(req, res)=>
+// {
+// res.send('initial load');
+// })
 
 server.use(middleware);
 server.use("/user", userRouter);

@@ -4,62 +4,29 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 var db = process.env.MONGODB_URL ||'mongodb://user:password123@ds019856.mlab.com:19856/heroku_3xm0068v';
 const config = require("./../config/config");
-const userController = require('./../controller/user');
-
-/*server.use(cors({
-	origin: 'http://localhost',
-	// credentials: true
-}));*/
-
-server.use("/", (req, res, next) => {
-	try{
-mongoose.connect(db, {
-	useUnifiedTopology: true,
-	useNewUrlParser: true,
-	useMongoClient:true  
-	});
-	console.log('connected');
-}
-catch(err){
-	console.log('err',err);
-	console.log('error');
-}
-	next();
-})
-
-server.get("/", (req, res) =>	
-	{
-		console.log('test');
-		res.send('working');
-
-})
-
-//server.use("/", (req, res, next) => {
 
 
-
-	//let { protocal, host, port, name } = config.app.db;
-	//mongoose.connect(process.env.MONGODB_URI || `${protocal}${username}:${password}@${host}:${port}/${name}`, { useNewUrlParser: true, useCreateIndex:true, useMongoClient : true});
-	//next();
-	// mongodb://user:password123@ds019856.mlab.com:19856/heroku_3xm0068v
-//});
-
-/*server.use(['/contact'], async (req, res, next) => {
-	if(!req.headers.authorization){
-		return res.send({
-			status: 'error',
-			msg: 'Invalid Token'
-		})
-	}
-
-	await userController.validateToken(res, req.headers.authorization);
-
-	next();
-})*/
 
 server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({
-    extended: true
-}));
+
+
+// Create a database variable outside of the database connection callback to reuse the connection pool in your app.
+var db;
+
+// Connect to the database before starting the application server.
+mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://user:password123@ds019856.mlab.com:19856/heroku_3xm0068v", function (err, client) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
+  // Save database object from the callback for reuse.
+  db = client.db();
+
+  console.log("Database connection ready");
+
+});
+
+
 
 module.exports = server;
