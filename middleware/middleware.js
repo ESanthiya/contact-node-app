@@ -18,9 +18,11 @@ mongoose.connect(db, {
 	useNewUrlParser: true,
 	useMongoClient:true  
 	});
+	console.log('connected');
 }
 catch(err){
-	console.log(err);
+	console.log('err',err);
+	console.log('error');
 }
 	next();
 })
