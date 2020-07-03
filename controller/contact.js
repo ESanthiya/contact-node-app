@@ -35,7 +35,7 @@ class contactController{
 
 	async fetch(){
 		try{
-			let response = await contactSchema.find({userId: userSession.id});
+			let response = await contactSchema.find({});
 			return {
 				status: "success",
 				response: response
