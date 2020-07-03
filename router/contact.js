@@ -1,17 +1,17 @@
 const router = require('express').Router();
 const contactController = require('./../controller/contact');
 
-router.post('/post', async (req, res) => {
+router.post('/add', async (req, res) => {
 	const response = await contactController.add(req.body);
 	res.send(response);
 })
 
-router.put('/put', async (req, res) => {
+router.put('/update', async (req, res) => {
 	const response = await contactController.update(req.query.id, req.body);
 	res.send(response);
 })
 
-router.get('/get', async (req, res) => {
+router.get('/fetch', async (req, res) => {
 	const response = await contactController.fetch();
 	res.send(response);
 })
